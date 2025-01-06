@@ -4,13 +4,13 @@
 
 using namespace std;
 
-int fun(int a, int b) {
+long long fun(long long a, long long b) {
 	return (a + b) * (a - b);
 }
 
 int main() {
 
-	int a, b;
+	long long a, b;
 	cin >> a >> b;
 	cout<<fun(a, b);
 }
