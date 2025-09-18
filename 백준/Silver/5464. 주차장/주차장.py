@@ -17,7 +17,6 @@ parkingFee=[0]*(n+1)
 #자동차 무게
 car=[0]*(m+1)
 waitQ = deque()
-exitQ = deque()
 result = 0
 
 
