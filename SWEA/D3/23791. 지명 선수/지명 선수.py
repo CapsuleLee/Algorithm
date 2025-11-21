@@ -1,27 +1,30 @@
+
+import collections
+
 t=int(input())
 
 for testcase in range(1,t+1):
 
     n = int(input())
-    a = list(map(int,input().split()))
-    b = list(map(int, input().split()))
+    a = collections.deque(map(int,input().split()))
+    b = collections.deque(map(int, input().split()))
     answer=""
     result =[0]*n
     check = set()
     turn = True
     for i in range(n):
         if turn: #A팀 뽑을 차례
-            temp = a.pop(0)
+            temp = a.popleft()
             while temp in check:
-                temp = a.pop(0)
+                temp = a.popleft()
             result[temp-1]="A"
             check.add(temp)
             turn = False
 
         else: #B팀 뽑을 차례
-            temp = b.pop(0)
+            temp = b.popleft()
             while temp in check:
-                temp = b.pop(0)
+                temp = b.popleft()
             result[temp-1] = "B"
             check.add(temp)
             turn = True
